@@ -59,7 +59,7 @@ const Login = ({ onLoginSuccess }) => {
     console.log("admin called", e.target.name);
     if (validation()) {
       axios
-        .post("https://final-management-app.vercel.app/userLogin", { username, password, isAdmin: e.target.name === 'admin' })
+        .post("https://incident-system.onrender.com/userLogin", { username, password, isAdmin: e.target.name === 'admin' })
         .then((res) => {
           if (res.data.user) {
             setSnackbarMessage("Login successful");
