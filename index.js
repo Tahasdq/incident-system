@@ -22,6 +22,9 @@ app.use(bodyParser.json());
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
 
+
+
+
 // Set the views directory (optional, default is 'views')
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -1416,6 +1419,8 @@ app.get('/pdf/:id', (req, res) => {
     });
   });
 });
+
+
 
 app.post('/create-pdf/:id', async (req, res) => {
   const id = req.params.id;
