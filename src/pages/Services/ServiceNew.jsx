@@ -21,6 +21,8 @@ const ServiceNew = () => {
   const [OccurenceNumberSaved, setOccurenceNumberSaved] = useState(0);
   const [OccurenceIdForUpdate, setOccurenceIdForUpdate] = useState("");
   const [existingVar, setExistingVar] = useState("");
+  const [selectedOption, setSelectedOption] = useState('');
+
 
 
 
@@ -260,6 +262,9 @@ const ServiceNew = () => {
 
 
 
+    if (id === "vehicle3") {
+      setSelectedOption(value);     
+    }
 
     if (id === "vehicle3" && checked) {
       // Disable Garrison radio buttons
@@ -451,6 +456,7 @@ const ServiceNew = () => {
     setStaffIds([]);
     setGarrsionId('');
     localStorage.removeItem("checkedBoxes");
+    setSelectedOption('');
     {/* Maaz Update: I have noticed after successfull editing or addition, radio buttons never get unchecked, it wasn't possibe so i reload the window on both editing and addition after success*/ }
     window.location.reload();
   };
@@ -538,6 +544,7 @@ const ServiceNew = () => {
       occurance_Number: "", // Clearing the fields
       occurance_Code: "",
     });
+    setSelectedOption('');
 
   }
 
@@ -751,6 +758,7 @@ const ServiceNew = () => {
                 name="Status"
                 value="1"
                 onChange={handleInput}
+                checked={selectedOption === '1'}
 
               />
               <label for="vehicle3" className="ml-2">
